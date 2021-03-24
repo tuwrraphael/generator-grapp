@@ -12,7 +12,9 @@ My personal template for webcomponent based no-framework PWAs in 2021
 # Usage
 
 ## Install
+For now, you need to npm link the github repo, I did not publish on npm yet.
 
+Later, after publish:
 First, install [Yeoman](http://yeoman.io) and generator-grapp using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
