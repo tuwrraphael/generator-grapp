@@ -34,12 +34,27 @@ yo grapp
 yo grapp:component componentname
 ```
 
-## Publish
-Enable github pages to host the gh-pages branch of your repository. If your app is hosted in a path, you need to adjust it in webpack.config.js.
+## Publish to Github pages
+You need to create a [Deploy key](https://docs.github.com/en/developers/overview/managing-deploy-keys) under the settings of your repository.
+~~~bash
+ ssh-keygen -t rsa -b 4096 -C "<your-github-user-name>@github.com"
+~~~
+Upload the contents of the .pub file as your Deploy key.
+
+Then create a new [Repository Secret](https://docs.github.com/en/actions/reference/encrypted-secrets#about-encrypted-secrets), name it `DEPLOY_KEY` and set its contents to the contents of the id_rsa file from before.
+
+If your app is hosted in a path, you need to adjust it in webpack.config.js.
 Eg. if your url would be https://someone.github.io/my-path then:
 ```js
     const base = {
-        "gh-pages": "/my-path",
+        "gh-pages": "/my-path/",
         "local": "/"
     }[environment];
 ```
+
+If your main branch is not called `main`, you may need to change the github action file accordingly.
+~~~yaml
+on:
+  push:
+    branches: [ <main-branch-name> ]
+~~~
