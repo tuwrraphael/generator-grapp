@@ -151,6 +151,12 @@ module.exports = (env, argv) => {
             port: 9000,
             historyApiFallback: {
                 index: "/"
+            },
+            client: {
+                overlay: {
+                    warnings: false,
+                    errors: true
+                }
             }
         }
     };
