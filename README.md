@@ -1,5 +1,5 @@
 # grapp
-My personal template for webcomponent based no-framework PWAs in 2021
+My personal template for webcomponent based no-framework PWAs in 2022
 * webpack5
 * typescript
 * sass
