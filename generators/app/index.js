@@ -1,8 +1,8 @@
 "use strict";
-const Generator = require("yeoman-generator");
-const dashify = require("dashify");
+import Generator from "yeoman-generator";
+import dashify from "dashify";
 
-module.exports = class extends Generator {
+export default class extends Generator {
   async prompting() {
     this.answers = await this.prompt([
       {
@@ -11,8 +11,8 @@ module.exports = class extends Generator {
         message: "Application name"
       },
       {
-        type: "appdescription",
-        name: "app",
+        type: "input",
+        name: "appdescription",
         message: "Application description"
       }
     ]);
