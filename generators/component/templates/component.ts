@@ -3,13 +3,16 @@ import "./<%= componentname %>.scss";
 
 export class <%= componentname %> extends HTMLElement {
    
+    private rendered = false;
     constructor() {
         super();
-        this.innerHTML = template;
     }
 
     connectedCallback() {
-
+        if (!this.rendered) {
+            this.rendered = true;
+            this.innerHTML = template;
+        }
     }
 
     disconnectedCallback() {
@@ -17,4 +20,5 @@ export class <%= componentname %> extends HTMLElement {
     }
 }
 
-customElements.define("<%= tagname %>", <%= componentname %>);
+export const <%= componentname %>TagName = "<%= tagname %>";
+customElements.define(<%= componentname %>TagName, <%= componentname %>);

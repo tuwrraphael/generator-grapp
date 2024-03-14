@@ -1,8 +1,8 @@
 "use strict";
-const Generator = require("yeoman-generator");
-const dashify = require("dashify");
+import Generator from "yeoman-generator";
+import dashify from "dashify";
 
-module.exports = class extends Generator {
+export default class extends Generator {
   constructor(args, opts) {
     super(args, opts);
     this.argument("componentname", { type: String, required: true });
